@@ -25,6 +25,11 @@
     "sequelize": "^6.3.5",
     "mysql2": "^2.2.5"
   },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "prettier": "^2.1.2"
+  },
   "bugs": {
     "url": "https://github.com/raseward14/Tech_Blog/issues"
   },
