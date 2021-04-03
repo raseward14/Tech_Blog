@@ -24,8 +24,6 @@
     "connect-session-sequelize": "^7.0.4",
     "sequelize": "^6.3.5",
     "mysql2": "^2.2.5"
-
-
   },
   "bugs": {
     "url": "https://github.com/raseward14/Tech_Blog/issues"
