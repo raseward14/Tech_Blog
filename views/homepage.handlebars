@@ -1,11 +1,11 @@
 <!-- Loop over each object in the projects array -->
-{{#each projects as |project| }}
+{{#each post as |post| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{{get_emoji}}}
-      <a href="/project/{{project.id}}">{{project.name}}</a>
+      <a href="/project/{{post.id}}">{{post.name}}</a>
     </h2>
     <p>
       <span for="img" aria-label="money">💲</span>
