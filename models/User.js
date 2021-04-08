@@ -21,6 +21,14 @@ User.init(
       allowNull: false,
       defaultValue: false
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: false,
+      validate: {
+        isEmail: true
+      }
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

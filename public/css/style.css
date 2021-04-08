@@ -1,27 +1,31 @@
 nav {
-    background-color: rgba(37, 18, 18, 0.8);
+  background-color: rgba(37, 18, 18, 0.8);
 }
 
 .nav {
-    color: rgba(96, 240, 216, 0.8);
-    justify-content: space-between;
-    padding: 20px;
-    font-weight: bold;
+  color: rgba(96, 240, 216, 0.8);
+  justify-content: space-between;
+  padding: 20px;
+  font-weight: bold;
+  font-size: larger;
+  margin-left: 50px;
 }
 
 body {
-    background-color: rgba(212, 245, 239, 0.8);
+  background-color: rgba(212, 245, 239, 0.8);
 }
 
 .my-badge {
-    font-size: 40px;
-    color:  rgba(37, 18, 18, 0.8);
-    border-radius: 5px;
-    background-color:  rgba(212, 245, 239, 0.8);
-    padding: 3px;
-    box-shadow: 5px 5px grey;
+  font-size: 40px;
+  color: rgba(37, 18, 18, 0.8);
+  border-radius: 5px;
+  background-color: rgba(212, 245, 239, 0.8);
+  padding: 3px;
+  box-shadow: 5px 5px grey;
+  margin-left: 50px;
+
 }
 
 .navbar-expand-lg {
-padding: 15px;
+  padding: 15px;
 }

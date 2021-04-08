@@ -25,12 +25,12 @@
             <a class="nav" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav" href="/profile">Dashboard</a>
+            <a class="nav" href="/dashboard">Dashboard</a>
           </li>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
           <li class="nav-item">
-            <a class="nav" href="/login" id="logout">logout</a>
+            <a class="nav" href="/homepage" id="logout">logout</a>
             {{else}}
             <a class="nav" href="/login">login</a>
             {{/if}}

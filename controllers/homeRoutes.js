@@ -11,7 +11,7 @@ router.get('/', withAuth, async (req, res) => {
             order: [['name', 'ASC']],
           });
         // Serialize data so the template can read it
-        const users = userData.map((post) => post.get(
+        const users = userData.map((user) => user.get(
             { plain: true }
         ));
         // Pass serialized data and session flag into template
@@ -24,7 +24,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-// render a post
+// render single post
 router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
@@ -45,10 +45,10 @@ router.get('/post/:id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
 
-// render profile, use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+// render dashboard, use withAuth middleware to prevent access to route
+router.get('/dashboard', withAuth, async (req, res) => {
     try {
         // find logged in user based on session ID
         const userData = await User.findByPk(req.session.user_id, {
@@ -58,7 +58,7 @@ router.get('/profile', withAuth, async (req, res) => {
         // serialize data so template can read it
         const user = userData.get({ plain: true });
         // pass serialized data and session flag into template
-        res.render('profile', {
+        res.render('dashboard', {
             ...user,
             logged_in: true
         });
@@ -75,6 +75,16 @@ router.get('/login', async (req, res) => {
         return;
     }
     res.render('login');
+});
+
+// render signup
+router.get('/signup', async (req, res) => {
+    // if user already logged in, redirect request to another route
+    if (req.session.logged_in) {
+        res.redirect('profile');
+        return;
+    }
+    res.render('signup');
 });
 
 module.exports = router;
