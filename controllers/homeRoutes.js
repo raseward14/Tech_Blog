@@ -3,21 +3,24 @@ const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // render homepage with exhisting posts
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         // Get all posts and JOIN with user data
-        const userData = await User.findAll({
-            attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
+        const postData = await Post.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['user_name']
+                }
+            ]
           });
         // Serialize data so the template can read it
-        const users = userData.map((user) => user.get(
+        const posts = postData.map((post) => post.get(
             { plain: true }
         ));
         // Pass serialized data and session flag into template
         res.render('homepage', {
-            users,
-            logged_in: true
+            posts,
         })
     } catch (err) {
         res.status(500).json(err)
@@ -71,7 +74,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 router.get('/login', async (req, res) => {
     // if user already logged in, redirect request to another route
     if (req.session.logged_in) {
-        res.redirect('profile');
+        res.redirect('dashboard');
         return;
     }
     res.render('login');
@@ -81,7 +84,7 @@ router.get('/login', async (req, res) => {
 router.get('/signup', async (req, res) => {
     // if user already logged in, redirect request to another route
     if (req.session.logged_in) {
-        res.redirect('profile');
+        res.redirect('dashboard');
         return;
     }
     res.render('signup');

@@ -30,7 +30,7 @@
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
           <li class="nav-item">
-            <a class="nav" href="/homepage" id="logout">logout</a>
+            <a class="nav" href="/" id="logout">logout</a>
             {{else}}
             <a class="nav" href="/login">login</a>
             {{/if}}
@@ -38,10 +38,15 @@
         </ul>
       </div>
       <div>
+        {{#if logged_in}}
+         <p>
+        <a href="/dashboard" class="my-badge">Dashboard</a>
+        </p>
+        {{else}}
         <p>
         <a href="/" class="my-badge">The Tech Blog</a>
         </p>
-
+      {{/if}}
       </div>
     </nav>
   </header>
@@ -59,6 +64,7 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+
 </body>
 
 </html>
