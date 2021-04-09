@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User } = require('../../models');
 
 // /api/user
 // posting a new userRoute
@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
-// look into req.session.id
+
 router.post('/logout', async (req, res) => {
   if (req.session.logged_in) {
     await req.session.destroy(() => {
