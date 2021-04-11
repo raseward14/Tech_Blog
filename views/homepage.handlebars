@@ -8,5 +8,10 @@
     <p>Created by {{post.user.user_name}} on {{format_date post.date_created}}</p>
     <p>{{post.content}}</p>
   </div>
+  {{#each comment as |comment|}}
+  <div>
+    <p>{{post.comment.comment}} by {{post.comment.user.user_name}}</p>
+  </div>
+  {{/each}}
 </div>
 {{/each}}
