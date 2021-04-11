@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // render homepage with exhisting posts
@@ -11,6 +11,10 @@ router.get('/', async (req, res) => {
                 {
                     model: User,
                     attributes: ['user_name']
+                },
+                {
+                    model: Comment,
+                    attributes: ['comment',]
                 }
             ]
           });
