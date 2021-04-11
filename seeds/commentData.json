@@ -1,0 +1,27 @@
+[
+  {
+    "comment": "I like working with views the most because its fun creating the websites appearance. Go Handlebars!",
+    "post_id": 1,
+    "user_id": 2
+  },
+  {
+    "comment": "Controller is where its at. Nothing else matters if you can't log in and out!",
+    "post_id": 1,
+    "user_id": 3
+  },
+  {
+    "comment": "Without the model, we can't store, or retrieve data. The models, and associations matter most!.",
+    "post_id": 1,
+    "user_id": 1
+  },
+  {
+    "comment": "Object Oriented Programming allows us to reuse code. Constructor functions make sense, just saying.",
+    "post_id": 3,
+    "user_id": 2
+  },
+  {
+    "comment": "I frequently use async await functions to handle my promises in object relational mapping. It gives us far more control over the order that functions execute. It also makes our webpage faster.",
+    "post_id": 3,
+    "user_id": 1
+  }
+]
