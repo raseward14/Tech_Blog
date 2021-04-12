@@ -31,7 +31,10 @@
       <div class="col-md-8 post-list-item">
         <h4>{{post.title}} on {{format_date post.date_created}}</h4>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-2 update">
+        <button class="btn btn-sm btn-warning" data-id="{{post.id}}">UPDATE</button>
+      </div>
+      <div class="col-md-2 delete">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>

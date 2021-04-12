@@ -12,16 +12,20 @@ nav {
 }
 
 body {
-  background-color: rgba(212, 245, 239, 0.8);
+  background-color: rgba(248, 255, 254, 0.8);
+}
+
+.post-item {
+  border-style: outset;
+  border-color: cornsilk;
+  background-color: rgb(209, 209, 209);
 }
 
 .post-list {
   border-radius: 7px;
   background: burlywood;
   padding: 10px;
- align-items: center;
- 
-
+  align-items: center;
 }
 
 .create-post {
@@ -33,6 +37,8 @@ body {
 .post-list-item {
   border-radius: 4px;
   background: rgb(216, 208, 198);
+  border-style: outset;
+  border-color: cornsilk;
 }
 
 .my-badge {
@@ -43,7 +49,6 @@ body {
   padding: 3px;
   box-shadow: 5px 5px grey;
   margin-left: 50px;
-
 }
 
 .navbar-expand-lg {
