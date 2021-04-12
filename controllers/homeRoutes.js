@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['comment',]
+                    attributes: ['comment']
                 }
             ]
           });
@@ -22,6 +22,7 @@ router.get('/', async (req, res) => {
         const posts = postData.map((post) => post.get(
             { plain: true }
         ));
+        console.log(posts);
         // Pass serialized data and session flag into template
         res.render('homepage', {
             posts,
@@ -32,30 +33,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// comment on a single post
-router.get('/post/:id', async (req, res) => {
-    try {
-        const postData = await Post.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                }
-            ]
-        });
-
-        const post = postData.get({ plain: true });
-
-        res.render('post', {
-            ...post,
-            logged_in: true
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
-
-// render dashboard, use withAuth middleware to prevent access to route
+// render dashboard, withAuth middleware prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         // find logged in user based on session ID
@@ -75,7 +53,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
-// render login with username and password
+// render login with username and password page
 router.get('/login', async (req, res) => {
     // if user already logged in, redirect request to another route
     if (req.session.logged_in) {
@@ -85,7 +63,7 @@ router.get('/login', async (req, res) => {
     res.render('login');
 });
 
-// render signup
+// render signup page
 router.get('/signup', async (req, res) => {
     // if user already logged in, redirect request to another route
     if (req.session.logged_in) {

@@ -5,7 +5,7 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-md-6">
+  <div class="col-md-5 create-post">
     <h3>Create a Post:</h3>
 
     <form class="form new-post-form">
@@ -18,26 +18,27 @@
         <textarea class="form-input" id="post-content" name="post-content"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary" onClick="window.location.reload();">Create</button>
       </div>
     </form>
   </div>
 
-  {{#if post.length}}
+ 
   <div class="col-md-6 post-list">
-
-    {{#each post as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4>{{post.title}}{{post.content}}</h4>
+    {{#if posts.length}}
+    {{#each posts as |post|}}
+    <div class="row mb-2 post-list">
+      <div class="col-md-8 post-list-item">
+        <h4>{{post.title}} on {{format_date post.date_created}}</h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
+    {{/if}}
   </div>
-  {{/if}}
+  
 </div>
 
 <script src="./js/dashboard.js"></script>

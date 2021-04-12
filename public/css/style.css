@@ -1,9 +1,9 @@
 nav {
-  background-color: rgba(37, 18, 18, 0.8);
+  background-color: rgba(155, 122, 101, 0.8);
 }
 
 .nav {
-  color: rgba(96, 240, 216, 0.8);
+  color: black;
   justify-content: space-between;
   padding: 20px;
   font-weight: bold;
@@ -13,6 +13,26 @@ nav {
 
 body {
   background-color: rgba(212, 245, 239, 0.8);
+}
+
+.post-list {
+  border-radius: 7px;
+  background: burlywood;
+  padding: 10px;
+ align-items: center;
+ 
+
+}
+
+.create-post {
+  border-radius: 7px;
+  background: burlywood;
+  margin-right: 10px;
+}
+
+.post-list-item {
+  border-radius: 4px;
+  background: rgb(216, 208, 198);
 }
 
 .my-badge {
