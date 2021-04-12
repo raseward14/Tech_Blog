@@ -1,12 +1,17 @@
 <!-- Loop over each object in the post array -->
 {{#each posts as |post| }}
 <div class="row mb-4 project">
-  <div class="col-md-5 post-item">
+  <div class="col-md-12 post-item">
     <h2>
       {{post.title}}
     </h2>
     <p style="font-weight: 500;">Created by {{post.user.user_name}} on {{format_date post.date_created}}</p>
     <p>{{post.content}}</p>
+    {{#if logged_in}}
+    <button class="btn btn-block">Comment</button>
+    {{else}}
+    <span>Log in to join the conversation!</span>
+    {{/if}}
   </div>
 </div>
 {{/each}}

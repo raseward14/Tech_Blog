@@ -45,32 +45,14 @@ const chosenPostHandler = async (event) => {
             <label for="post-content">Content:</label>
             <textarea class="form-input" id="post-content" name="post-content">${json.content}</textarea>
           </div>
-          <div class="form-group">
-        <button type="submit" class="btn btn-primary" onClick="window.location.reload();">Save</button>
-      </div>
+          <div class="form-group"><br></div>
           `;
 
         // Display result
         document.getElementById('post-form').innerHTML = li;
       })
       .catch((err) => console.log(err));
-
-    // if (response.ok) {
-    //   document.location.replace('/dashboard');
-    // } else {
-    //   alert('Failed to select post');
-    // }
   }
-
-  // if (title && content) {
-  //   // const response = await fetch(`/api/posts`, {
-  //   //   method: 'POST',
-  //   //   body: JSON.stringify({ title, content }),
-  //   //   headers: {
-  //   //     'Content-Type': 'application/json',
-  //   //   },
-  //   // });
-  //   updateButtonHandler();
 };
 
 const delButtonHandler = async (event) => {
@@ -109,17 +91,6 @@ const updateButtonHandler = async (event) => {
         alert('Failed to update post');
       }
     }
-
-  //   const response = await fetch(`/api/posts/${id}`, {
-  //     method: 'PUT',
-  //   });
-
-  //   if (response.ok) {
-  //     document.location.replace('/dashboard');
-  //   } else {
-  //     alert('Failed to update post');
-  //   }
-  // }
 };
 };
 
