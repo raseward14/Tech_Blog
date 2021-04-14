@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// /
 // render homepage with exhisting posts
 router.get('/', async (req, res) => {
     try {
@@ -33,6 +34,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// /dashboard
 // render dashboard, withAuth middleware prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
@@ -53,6 +55,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+// /login
 // render login with username and password page
 router.get('/login', async (req, res) => {
     // if user already logged in, redirect request to another route
@@ -63,6 +66,7 @@ router.get('/login', async (req, res) => {
     res.render('login');
 });
 
+// /signup
 // render signup page
 router.get('/signup', async (req, res) => {
     // if user already logged in, redirect request to another route
