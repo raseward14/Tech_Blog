@@ -22,6 +22,7 @@ Here are a few resources that helped me get this project knocked out!
 * [dotenv](https://www.npmjs.com/package/dotenv)
 * [MySQL2](https://www.npmjs.com/package/mysql2)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
+* https://getcssscan.com/css-box-shadow-examples
 
 ## License
 * Link for more information: (https://opensource.org/licenses/MIT)
