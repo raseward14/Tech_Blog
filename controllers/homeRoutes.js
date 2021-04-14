@@ -23,11 +23,12 @@ router.get('/', async (req, res) => {
         const posts = postData.map((post) => post.get(
             { plain: true }
         ));
+
         console.log(posts);
         // Pass serialized data and session flag into template
         res.render('homepage', {
-            posts,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            posts
         })
     } catch (err) {
         res.status(500).json(err)
@@ -76,5 +77,11 @@ router.get('/signup', async (req, res) => {
     }
     res.render('signup');
 });
+
+// /comment
+// render comment page
+router.get('/comment', async (req, res) => {
+    res.render('comment')
+})
 
 module.exports = router;

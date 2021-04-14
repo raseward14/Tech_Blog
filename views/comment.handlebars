@@ -1,0 +1,19 @@
+ <div class="col-md-6 post-list">
+    <div class="row mb-2 post-list">
+      <div class="col-md-8 post-list-item" >
+        <h4 data-id="{{post.id}}">{{post.title}} on {{format_date post.date_created}}</h4>
+      </div>
+      <div class="col-md-8 post-list-item" >
+        <h4 data-id="{{post.id}}">{{post.content}} on {{format_date post.date_created}}</h4>
+      </div>
+      <div class="form-group">
+        <label for="comment-content">Comment:</label>
+        <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary new-comment-form">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/comment.js"></script>

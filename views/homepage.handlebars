@@ -7,16 +7,10 @@
     </h2>
     <p style="font-weight: 500;">Created by {{post.user.user_name}} on {{format_date post.date_created}}</p>
     <p>{{post.content}}</p>
-    {{#if logged_in}}
-    <button class="btn btn-block">Comment</button>
-    {{else}}
-    <span>Log in to join the conversation!</span>
-    {{/if}}
+    <a href="/comment" class="small green button new-comment-form">Comment</a>
   </div>
-</div>
-{{/each}}
-{{#each post as |comment|}}
-<div>
-  <p>{{post.comments.comment}}</p>
+  {{#each post.comments as |comment| }}
+  <div class="col-md-10 comment-item">{{comment.comment}}</div>
+  {{/each}}
 </div>
 {{/each}}

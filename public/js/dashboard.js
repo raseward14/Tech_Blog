@@ -1,3 +1,4 @@
+// new post
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -21,6 +22,7 @@ const newFormHandler = async (event) => {
   }
 };
 
+// selected post
 const chosenPostHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -55,6 +57,7 @@ const chosenPostHandler = async (event) => {
   }
 };
 
+// delete post
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -71,6 +74,7 @@ const delButtonHandler = async (event) => {
   }
 };
 
+// update post
 const updateButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
