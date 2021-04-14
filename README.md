@@ -6,7 +6,7 @@ A CMS-style blog site where developers can publish their blog posts and comment 
 
 Several node package modules are utilized; express-handlebars package implements Handlebars.js for views, MySQL2 and Sequelize packages connect to a MySQL database for models, and create an Express.js API for Controllers, dotenv package is for environment variables, bcrypt package hashes passwords, and express-session and connect-session-sequelize packages add authentication.
 
-**[Click here to join the conversation!](https://drive.google.com/file/d/1q1bYzoWYdOZ0YetXsI5ky9tCB3cfT3Os/view)**
+**[Click here to join the conversation!](https://mighty-taiga-53972.herokuapp.com/login)**
 
 ## Table of Contents
 * [Usage](#usage)
