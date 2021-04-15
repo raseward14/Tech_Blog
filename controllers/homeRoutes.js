@@ -13,10 +13,7 @@ router.get('/', async (req, res) => {
                     model: User,
                     attributes: ['user_name']
                 },
-                {
-                    model: Comment,
-                    attributes: ['comment']
-                }
+                { model: Comment, }
             ]
           });
         // Serialize data so the template can read it
@@ -78,10 +75,55 @@ router.get('/signup', async (req, res) => {
     res.render('signup');
 });
 
+// posts/:id
+// find one post by its id
+router.get('/comment/:id', async (req, res) => {
+    try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          { model: User },
+          { model: Comment },
+        ],
+      });
+  
+      const post = postData.get({ plain: true })
+  
+      res.render('comment', {
+          ...post
+      })
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 // /comment
-// render comment page
-router.get('/comment', async (req, res) => {
-    res.render('comment')
-})
+// render comment page with selected post
+// router.get('/comment', async (req, res) => {
+//     try {
+//         // Get all posts and JOIN with user data
+//         const postData = await Post.findByPk(req.params.id, {
+//             include: [
+//                 {
+//                     model: User,
+//                     attributes: ['user_name']
+//                 },
+//                 { model: Comment, }
+//             ]
+//           });
+//         // Serialize data so the template can read it
+//         const posts = postData.map((post) => post.get(
+//             { plain: true }
+//         ));
+
+//         console.log(posts);
+//         // Pass serialized data and session flag into template
+//         res.render('comment', {
+//             // logged_in: req.session.logged_in,
+//             posts
+//         })
+//     } catch (err) {
+//         res.status(500).json(err)
+//     }
+// })
 
 module.exports = router;

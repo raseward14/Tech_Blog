@@ -7,10 +7,12 @@
     </h2>
     <p style="font-weight: 500;">Created by {{post.user.user_name}} on {{format_date post.date_created}}</p>
     <p>{{post.content}}</p>
-    <a href="/comment" class="small green button new-comment-form">Comment</a>
+      <a class="button btn-check" href="/comment/{{post.id}}" id="{{post.id}}">Comment</a>
   </div>
   {{#each post.comments as |comment| }}
-  <div class="col-md-10 comment-item">{{comment.comment}}</div>
+  <div class="col-md-10 comment-item">{{comment.comment}}
+    <div style="text-align: end;">{{comment.name}} on {{format_date comment.date_created}}</div>
+  </div>
   {{/each}}
 </div>
 {{/each}}

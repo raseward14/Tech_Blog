@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// /api/posts/:id
+// posts/:id
 // find one post by its id
 router.get('/:id', async (req, res) => {
   try {
@@ -27,12 +27,11 @@ router.get('/:id', async (req, res) => {
       ],
     });
 
-    if (!postData) {
-      res.status(404).json({ message: 'No post found with this id!' });
-      return;
-    }
+    const post = postData.get({ plain: true })
 
-    res.status(200).json(postData);
+    res.render('comment', {
+        ...post
+    })
   } catch (err) {
     res.status(500).json(err);
   }
