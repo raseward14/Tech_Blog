@@ -31,12 +31,13 @@
       <div class="col-md-8 post-list-item" >
         <h4 data-id="{{post.id}}">{{post.title}} on {{format_date post.date_created}}</h4>
       </div>
-      <div class="col-md-2">
+      <a class="button btn-check" href="/post/{{post.id}}" id="{{post.id}}">Edit</a>
+      {{!-- <div class="col-md-2">
         <button class="btn btn-sm btn-warning update" data-id="{{post.id}}">UPDATE</button>
       </div>
       <div class="col-md-2">
         <button class="btn btn-sm btn-danger delete" data-id="{{post.id}}">DELETE</button>
-      </div>
+      </div> --}}
     </div>
     {{/each}}
     {{/if}}

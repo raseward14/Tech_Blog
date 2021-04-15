@@ -1,0 +1,17 @@
+<div class="col-md-12 post-item">
+    <h2>
+        {{title}}
+    </h2>
+    <p style="font-weight: 500;">Created by {{ user.user_name }} on {{ format_date date_created }}</p>
+    <p>{{ content }}</p>
+    <form class="form new-comment">
+        {{!-- <input placeholder="name" class="comment" type="text" name="name" id="comment-name"><br>
+        <input placeholder="comment" class="comment submission-field" type="text" name="comment" id="comment-text"><br>
+        <input type="hidden" id="post-id" value="{{ id }}"> --}}
+        <button class="small green button delete" href="api/posts/{{id}}" id="{{ id }}">Delete Post</button>
+        <a class="small green button update" href="/edit/{{ id }}" id="{{ id }}">Update Post</a>
+    </form>
+
+</div>
+
+<script src="./js/post.js"></script>
