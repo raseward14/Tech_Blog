@@ -93,36 +93,36 @@ router.get('/comment/:id', async (req, res) => {
 
 // find one post by its id
 router.get('/post/:id', async (req, res) => {
-    try {
-        const postData = await Post.findByPk(req.params.id, {
-          include: [{ model: User }, { model: Comment }],
-        });
-    
-        const post = postData.get({ plain: true });
-    
-        res.render('post', {
-          ...post,
-        });
-      } catch (err) {
-        res.status(500).json(err);
-      }
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Comment }],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('post', {
+      ...post,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // edit one post by its id
 router.get('/edit/:id', async (req, res) => {
   try {
-      const postData = await Post.findByPk(req.params.id, {
-        include: [{ model: User }, { model: Comment }],
-      });
-  
-      const post = postData.get({ plain: true });
-  
-      res.render('edit', {
-        ...post,
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
+    const postData = await Post.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Comment }],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('edit', {
+      ...post,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
