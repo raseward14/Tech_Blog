@@ -1,5 +1,6 @@
 // delete post
 const delButtonHandler = async (event) => {
+  console.log('delete');
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
 
@@ -8,10 +9,12 @@ const delButtonHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/');
       } else {
         alert('Failed to delete post');
       }
+    } else {
+      console.log('error, no data id found');
     }
   };
 

@@ -9,7 +9,7 @@
         <input placeholder="comment" class="comment submission-field" type="text" name="comment" id="comment-text"><br>
         <input type="hidden" id="post-id" value="{{ id }}"> --}}
         <input type="hidden" id="data-id" value="{{ id }}">
-        <button class="small green button delete">Delete Post</button>
+        <button class="small green button delete" data-id="{{ id }}">Delete Post</button>
         <a class="small green button update" href="/edit/{{ id }}" >Update Post</a>
     </form>
 </div>
