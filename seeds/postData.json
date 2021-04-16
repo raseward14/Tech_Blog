@@ -1,17 +1,17 @@
 [
-    {
-      "title": "Model View Controller",
-      "content": "A popular paradigm used in application deployment.",
-      "user_id": 1
-    },
-    {
-      "title": "Object Oriented Programming",
-      "content": "An approach to programming that involves creating templates, and instantiating object constructor functions",
-      "user_id": 2
-    },
-    {
-      "title": "Object Relational Mapping",
-      "content": "A programming technique used to convert data between incompatible systems using orject-oriented programming.",
-      "user_id": 3
-    }
-  ]
+  {
+    "title": "Model View Controller",
+    "content": "A popular paradigm used in application deployment.",
+    "user_id": 1
+  },
+  {
+    "title": "Object Oriented Programming",
+    "content": "An approach to programming that involves creating templates, and instantiating object constructor functions",
+    "user_id": 2
+  },
+  {
+    "title": "Object Relational Mapping",
+    "content": "A programming technique used to convert data between incompatible systems using orject-oriented programming.",
+    "user_id": 3
+  }
+]

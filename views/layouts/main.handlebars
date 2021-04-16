@@ -10,7 +10,7 @@
   <!--Bootstrap link-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    
+
 </head>
 
 <body>
@@ -31,23 +31,23 @@
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
           <li class="nav-item">
-            <a class="nav" href="/" id="logout">logout</a>
+            <a class="nav" href="/" id="logout">Logout</a>
             {{else}}
-            <a class="nav" href="/login">login</a>
+            <a class="nav" href="/login">Login</a>
             {{/if}}
           </li>
         </ul>
       </div>
       <div>
         {{#if logged_in}}
-         <p>
-        <a href="/dashboard" class="my-badge">Dashboard</a>
+        <p>
+          <a href="/dashboard" class="my-badge">Dashboard</a>
         </p>
         {{else}}
         <p>
-        <a href="/" class="my-badge">The Tech Blog</a>
+          <a href="/" class="my-badge">The Tech Blog</a>
         </p>
-      {{/if}}
+        {{/if}}
       </div>
     </nav>
   </header>
@@ -60,9 +60,10 @@
 
     </footer>
   </div>
-<!-- Render script for logged in users only -->
+  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+
 </html>

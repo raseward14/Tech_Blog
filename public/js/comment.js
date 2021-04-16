@@ -11,7 +11,11 @@ const newCommentHandler = async (event) => {
   if (postId && commentName && comment) {
     const response = await fetch(`/api/comment`, {
       method: 'POST',
-      body: JSON.stringify({ post_id: postId, name: commentName, comment: comment }),
+      body: JSON.stringify({
+        post_id: postId,
+        name: commentName,
+        comment: comment,
+      }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -20,7 +24,7 @@ const newCommentHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert('Failed to post comment!')
+      alert('Failed to post comment!');
     }
   }
 };

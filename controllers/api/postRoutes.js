@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
 
 // /api/posts
 // find all posts
@@ -21,17 +20,14 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
-      include: [
-        { model: User },
-        { model: Comment },
-      ],
+      include: [{ model: User }, { model: Comment }],
     });
 
-    const post = postData.get({ plain: true })
+    const post = postData.get({ plain: true });
 
     res.render('comment', {
-        ...post
-    })
+      ...post,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -75,13 +71,13 @@ router.delete('/:id', async (req, res) => {
 // /api/posts/:id
 // editing a post a post
 router.put('/:id', async (req, res) => {
-  try{
+  try {
     const postData = await Post.update(req.body, {
       where: {
         id: req.params.id,
-      }
-    })
-    res.status(200).json(postData)
+      },
+    });
+    res.status(200).json(postData);
   } catch (err) {
     res.status(400).json(err);
   }
