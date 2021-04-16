@@ -15,7 +15,7 @@ Several node package modules are utilized; express-handlebars package implements
 
 ## Usage
 * **The Finished Product**  
-![E-Commerce](assets/images/snapshot.png)
+![Tech-Blog](assets/images/snapshot.png)
 
 ## Credits
 Here are a few resources that helped me get this project knocked out!
